@@ -1,0 +1,13 @@
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+
+load_dotenv()
+chatPromptTemplate=ChatPromptTemplate([
+    ('system','You are a helpful {domain} assistant.'),
+    ('human','Explain {topic} in 5 lines')
+])
+
+prompt=chatPromptTemplate.invoke({'domain':'AI','topic':'attention mechanism'})
+
+print(prompt)
